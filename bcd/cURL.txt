@@ -144,7 +144,7 @@ curl --location --request GET 'http://localhost:5000/reservas/v1/salasdisponivel
 
  - SALAS DIAS - GET
 
-curl --location --request GET 'http://localhost:5000/reservas/v1/salasdisponiveldia' \
+curl --location --request GET 'http://localhost:5000/reservas/v1/salasdisponiveldata' \
 --header 'Content-Type: application/json' \
 --data '{
     "data_inicio":"2024-12-28 08:00:00",
@@ -155,5 +155,5 @@ curl --location --request GET 'http://localhost:5000/reservas/v1/salasdisponivel
 
  - SALAS DISPONIVEIS - GET
 
-curl --location 'http://localhost:5000/reservas/v1/salasDisponivel' \
+curl --location 'http://localhost:5000/reservas/v1/salasdisponiveis' \
 --data ''

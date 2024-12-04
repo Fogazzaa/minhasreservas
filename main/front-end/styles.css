@@ -465,6 +465,13 @@ main #login #formulario-login .botoes .login input:hover {
   border-radius: 10px;
 }
 
+.main-principal #sala-tabela thead tr th #filtro-horario { /*é o escrito buscar sala*/
+  color: #6d6d6d;
+  padding: 6px;
+  border: none; /*Remove qualquer borda e garante bordas não visíveis*/
+  border-radius: 10px;
+}
+
 .main-principal #sala-tabela #sala-list-tabela tr:last-child td { /*última celula da tabela*/
   border-bottom: #b5b5b5 solid 9px;
 }

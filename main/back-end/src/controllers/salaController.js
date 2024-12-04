@@ -157,7 +157,7 @@ module.exports = class salaController {
     }
   }
 
-  static async getSalasDisponiveisDia(req, res) {
+  static async getSalasDisponiveisData(req, res) {
     const { data_inicio, data_fim } = req.body; // Pegando as datas de início e fim do corpo da requisição
 
     // Validação de dados
