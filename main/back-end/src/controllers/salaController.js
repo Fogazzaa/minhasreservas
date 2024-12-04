@@ -1,7 +1,7 @@
-const connect = require("../db/connect"); // Importa o módulo de conexão com o banco de dados
+const connect = require("../db/connect");
 
 module.exports = class salaController {
-  // Estrutura os campos do corpo da requisição
+
   static async createSalas(req, res) {
     const { nome, descricao, bloco, tipo, capacidade } = req.body;
 
@@ -35,7 +35,6 @@ module.exports = class salaController {
     }
   }
 
-  // Método para obter todos os usuários
   static async getAllSalasTabela(req, res) {
     const query = `SELECT * FROM sala`;
 
@@ -306,7 +305,6 @@ module.exports = class salaController {
     }
   }
 
-  // Método para atualizar dados de um usuário
   static async updateSala(req, res) {
     const { nome, descricao, bloco, tipo, capacidade } = req.body;
     const salaId = req.params.id_sala;
@@ -346,7 +344,6 @@ module.exports = class salaController {
     }
   }
 
-  // Método para excluir um usuário
   static async deleteSala(req, res) {
     const salaId = req.params.id_sala;
     const query = `DELETE FROM sala WHERE id_sala = ?`;

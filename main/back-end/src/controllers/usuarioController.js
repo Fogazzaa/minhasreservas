@@ -1,7 +1,7 @@
-const connect = require("../db/connect"); // Importa o módulo de conexão com o banco de dados
+const connect = require("../db/connect");
 
 module.exports = class usuarioController {
-  // Estrutura os campos do corpo da requisição
+
   static async createUsuarios(req, res) {
     const { NIF, email, senha, nome } = req.body;
 
@@ -64,7 +64,6 @@ module.exports = class usuarioController {
     }
   }
 
-  // Método para realizar login de um usuário
   static async loginUsuario(req, res) {
     const { senha, email } = req.body;
 
@@ -113,7 +112,6 @@ module.exports = class usuarioController {
     }
   }
 
-  // Método para obter todos os usuários
   static async getAllUsuarios(req, res) {
     const query = `SELECT * FROM usuario`;
 
@@ -133,7 +131,6 @@ module.exports = class usuarioController {
     }
   }
 
-  // Método para atualizar dados de um usuário
   static async updateUsuario(req, res) {
     const { email, senha, nome } = req.body;
     const usuarioId = req.params.id_usuario;
@@ -180,7 +177,6 @@ module.exports = class usuarioController {
     }
   }
 
-  // Método para excluir um usuário
   static async deleteUsuario(req, res) {
     const usuarioId = req.params.id_usuario;
     const query = `DELETE FROM usuario WHERE id_usuario = ?`;

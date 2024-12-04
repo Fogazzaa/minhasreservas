@@ -1,8 +1,7 @@
-const connect = require("../db/connect"); // Importa o módulo de conexão com o banco de dados
+const connect = require("../db/connect");
 
 module.exports = class AgendamentoController {
 
-//CRIAR RESERVAS
   static createReservas(req, res) {
     // Extrai os dados enviados no corpo da requisição
     const { fk_id_usuario, fk_id_sala, datahora_inicio, datahora_fim } =
@@ -153,7 +152,6 @@ module.exports = class AgendamentoController {
     });
   }
 
-//LISTAR RESERVAS
   static getAllReservas(req, res) {
     const query = `SELECT * FROM reserva`;
 
@@ -168,7 +166,6 @@ module.exports = class AgendamentoController {
     });
   }
 
-//UPDATE
   static updateReserva(req, res) {
     const { datahora_inicio, datahora_fim } = req.body;
     const reservaId = req.params.id_reserva;
@@ -320,7 +317,6 @@ module.exports = class AgendamentoController {
     });
   }
 
-//DELETE RESERVA
   static deleteReserva(req, res) {
     const reservaId = req.params.id_reserva;
     const query = `DELETE FROM reserva WHERE id_reserva = ?`;
