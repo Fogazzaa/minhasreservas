@@ -78,10 +78,10 @@ module.exports = class AgendamentoController {
           // Verifica se o horário solicitado está fora do horário permitido (8:00 - 21:00)
           const inicio = new Date(datahora_inicio).getHours();
           const fim = new Date(datahora_fim).getHours();
-          if (inicio < 8 || inicio >= 21 || fim < 8 || fim >= 21) {
+          if (inicio < 7 || inicio >= 21 || fim < 7 || fim >= 21) {
             return res.status(400).json({
               error:
-                "A reserva deve ser feita no horário de funcionamento do SENAI. Entre 8:00 e 21:00",
+                "A reserva deve ser feita no horário de funcionamento do SENAI. Entre 7:00 e 21:00",
             });
           }
 
@@ -180,7 +180,7 @@ module.exports = class AgendamentoController {
     // Função para validar horários de funcionamento
     const validaHorarioFuncionamento = (data) => {
       const hora = new Date(data).getHours();
-      return hora >= 8 && hora < 21;
+      return hora >= 7 && hora < 21;
     };
 
     // Verifica se os horários estão no intervalo permitido
@@ -190,7 +190,7 @@ module.exports = class AgendamentoController {
     ) {
       return res.status(400).json({
         error:
-          "A reserva deve ser feita no horário de funcionamento do SENAI. Entre 8:00 e 21:00",
+          "A reserva deve ser feita no horário de funcionamento do SENAI. Entre 7:00 e 21:00",
       });
     }
 
